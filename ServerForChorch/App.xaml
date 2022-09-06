@@ -1,0 +1,124 @@
+﻿<Application x:Class="ServerForChorch.App"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:ServerForChorch"
+			 StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<SolidColorBrush x:Key="windowBlackbgColor" Color="#444"/>
+		<SolidColorBrush x:Key="windowWhitebgColor" Color="#fff"/>
+
+		<SolidColorBrush x:Key="blackbgColor" Color="#353535"/>
+		<SolidColorBrush x:Key="blackfgColor" Color="#fff"/>
+		<SolidColorBrush x:Key="blackbbColor" Color="#222"/>
+		<SolidColorBrush x:Key="blackbgColorMouseOver" Color="#2f2f2f"/>
+		<SolidColorBrush x:Key="blackbbColorMouseOver" Color="#111"/>
+		<SolidColorBrush x:Key="blackbgColorEnabled" Color="#222"/>
+		<SolidColorBrush x:Key="blackbbColorEnabled" Color="#111"/>
+
+		<SolidColorBrush x:Key="whitebgColor" Color="#ddd"/>
+		<SolidColorBrush x:Key="whitefgColor" Color="#000"/>
+		<SolidColorBrush x:Key="whitebbColor" Color="#707070"/>
+		<SolidColorBrush x:Key="whitebbColorMouseOver" Color="#3c7fb1"/>
+		<SolidColorBrush x:Key="whitebgColorMouseOver" Color="#bee6fd"/>
+		<SolidColorBrush x:Key="whitebbColorEnabled" Color="#adb2b5"/>
+		<SolidColorBrush x:Key="whitebgColorEnabled" Color="#f4f4f4"/>
+
+		<Style x:Key="blackButtonStyle" TargetType="Button">
+			<Setter Property="Background" Value="{StaticResource blackbgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource blackfgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource blackbbColor}"/>
+			<Setter Property="Content" Value="{x:Type Button}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="2">
+							<ContentPresenter Content="{TemplateBinding Content}"
+											  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  Margin="{TemplateBinding Padding}"
+											  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Background" Value="{StaticResource blackbgColorMouseOver}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter Property="Background" Value="{StaticResource blackbgColorEnabled}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="whiteButtonStyle" TargetType="Button">
+			<Setter Property="Background" Value="{StaticResource whitebgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource whitefgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource whitebbColor}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="2">
+							<ContentPresenter Content="{TemplateBinding Content}"
+											  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  Margin="{TemplateBinding Padding}"
+											  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="BorderBrush" Value="{StaticResource whitebbColorMouseOver}"/>
+								<Setter Property="Background" Value="{StaticResource whitebgColorMouseOver}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter Property="BorderBrush" Value="{StaticResource whitebbColorEnabled}"/>
+								<Setter Property="Background" Value="{StaticResource whitebgColorEnabled}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		
+		<Style x:Key="blackListBox" TargetType="ListBox">
+			<Setter Property="Background" Value="{StaticResource blackbgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource blackfgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource blackbbColor}"/>
+		</Style>
+		<Style x:Key="whiteListBox" TargetType="ListBox">
+			<Setter Property="Background" Value="{StaticResource whitebgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource whitefgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource whitebbColor}"/>
+		</Style>
+
+		<Style x:Key="blackComboBox" TargetType="ComboBox">
+			<Setter Property="Background" Value="{StaticResource blackbgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource blackfgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource blackbbColor}"/>
+		</Style>
+		<Style x:Key="whiteComboBox" TargetType="ComboBox">
+			<Setter Property="Background" Value="{StaticResource whitebgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource whitefgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource whitebbColor}"/>
+		</Style>
+
+		<Style x:Key="blackMenu" TargetType="Menu">
+			<Setter Property="Background" Value="{StaticResource windowBlackbgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource blackfgColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource blackbbColor}"/>
+        </Style>
+		<Style x:Key="whiteMenu" TargetType="Menu">
+			<Setter Property="Background" Value="{StaticResource windowWhitebgColor}"/>
+			<Setter Property="Foreground" Value="{StaticResource whitefgColor}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource whitebbColor}"/>
+		</Style>
+
+		<Style x:Key="whiteMenuItem" TargetType="MenuItem">
+			<Setter Property="Foreground" Value="{StaticResource whitefgColor}"/>
+		</Style>
+	</Application.Resources>
+</Application>

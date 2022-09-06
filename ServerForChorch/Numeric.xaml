@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ServerForChorch.Numeric"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServerForChorch"
+             mc:Ignorable="d"
+             d:DesignHeight="20" d:DesignWidth="65">
+    <UserControl.Resources>
+        <Style x:Key="blackTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="{StaticResource blackbgColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource blackfgColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource blackbbColor}"/>
+        </Style>
+        <Style x:Key="whiteTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="{StaticResource whitebgColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource whitefgColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource whitebbColor}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="14"/>
+        </Grid.ColumnDefinitions>
+        <TextBox
+            x:Name="textBox"
+            Style="{StaticResource whiteTextBox}"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.RowSpan="2"
+            TextChanged="textChanged"/>
+        <Button
+            Name="buttonUp"
+            Style="{StaticResource whiteButtonStyle}"
+            Grid.Row="0"
+            Grid.Column="1"
+            FontSize="7"
+            Padding="0"
+            Content="▲" 
+            Click="Button_Up"/>
+        <Button
+            Name="buttonDown"
+            Style="{StaticResource whiteButtonStyle}"
+            Grid.Row="1"
+            Grid.Column="1"
+            FontSize="7"
+            Padding="0"
+            Content="▼"
+            Click="Button_Down"/>
+    </Grid>
+</UserControl>
